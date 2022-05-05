@@ -24,6 +24,8 @@ When in the CLI, check status of FreeSWITCH :
 
 Make a SIP call from a softphone e.g.  sip:123456@<your-local-ip>:5061
 
+Use digits for the destination address as these will be played back during the call flow.
+  
 Follow the audio prompts that you hear, and see the logging in the CLI.  
 
 The FreeSWITCH is configured to send all calls to scripts/demo.lua which processes them.
