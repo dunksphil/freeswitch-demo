@@ -22,7 +22,7 @@ When in the CLI, check status of FreeSWITCH :
 
 > status
 
-Make a SIP call from a softphone e.g.  sip:123456@<your-local-ip>:5061
+Make a SIP call from a softphone e.g.  sip:123456@yourIpAddress:5061
 
 Use digits for the destination address as these will be played back during the call flow.
   
