@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -o errexit -o pipefail -o nounset
+
+INTERNAL_NETWORK_ADDRESS="$(ip addr | grep 'eth0' | grep 'inet' | head -n 1 | awk '{print $2}' | awk -F '/' '{print $1}')"
+
+sed -i -e "/internal_rtp_ip/c\    <X-PRE-PROCESS cmd=\"set\" data=\"internal_rtp_ip=$INTERNAL_NETWORK_ADDRESS\"/>" /etc/freeswitch/vars.xml
+sed -i -e "/external_rtp_ip/c\    <X-PRE-PROCESS cmd=\"set\" data=\"external_rtp_ip=$NETWORK_ADDRESS\"/>" /etc/freeswitch/vars.xml
+sed -i -e "/internal_sip_ip/c\    <X-PRE-PROCESS cmd=\"set\" data=\"internal_sip_ip=$INTERNAL_NETWORK_ADDRESS\"/>" /etc/freeswitch/vars.xml
+sed -i -e "/external_sip_ip/c\    <X-PRE-PROCESS cmd=\"set\" data=\"external_sip_ip=$NETWORK_ADDRESS\"/>" /etc/freeswitch/vars.xml
+
+/usr/bin/freeswitch -nonat

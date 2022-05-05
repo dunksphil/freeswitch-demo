@@ -1,0 +1,13 @@
+<configuration name="lua.conf" description="Lua">
+    <settings>
+        <param name="script-directory" value="/usr/share/freeswitch/scripts/?.lua"/>
+        <param name="module-directory" value="/usr/share/freeswitch/scripts/?.so"/>
+
+        <!--
+        <hook event="CHANNEL_PARK" script="park_event_handler.lua"/>
+        <hook event="MESSAGE" script="message_event_handler.lua"/>
+        <hook event="RECV_INFO" script="info_event_handler.lua"/>
+        <hook event="CUSTOM" subclass="conference::maintenance" script="handle_conf_event.lua"/>
+        -->
+    </settings>
+</configuration>

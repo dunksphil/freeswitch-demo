@@ -1,0 +1,32 @@
+<configuration name="verto.conf" description="Verto">
+    <settings>
+        <param name="debug" value="10"/>
+        <param name="enable-presence" value="false"/>
+        <param name="detach-timeout-sec" value="120"/>
+    </settings>
+
+    <profiles>
+        <profile name="mine">
+            <param name="bind-local" value="0.0.0.0:8081"/>
+            <vhosts>
+                <vhost domain="0.0.0.0">
+                    <param name="alias" value="seven.local freeswitch.org"/>
+                    <!-- <param name="root" value="/usr/local/freeswitch/htdocs"/> -->
+                    <!-- <param name="script_root" value="/usr/local/freeswitch/scripts"/> -->
+                    <param name="index" value="index.html"/>
+                    <!--
+                              <param name="auth-realm" value="FreeSWITCH"/>
+                              <param name="auth-user" value="freeswitch"/>
+                              <param name="auth-pass" value="rocks"/>
+                    -->
+                    <rewrites>
+                        <!--rule expression="^/api" value="/my_custom_api.lua"/-->
+                        <rule expression="^/caller" value="/console_caller.lua"/>
+                        <rule expression="^/confs" value="/console_confs.lua"/>
+                        <rule expression="^/conf" value="/console_conf.lua"/>
+                    </rewrites>
+                </vhost>
+            </vhosts>
+        </profile>
+    </profiles>
+</configuration>

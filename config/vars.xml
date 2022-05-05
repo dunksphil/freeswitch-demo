@@ -1,0 +1,9 @@
+<include>
+    <X-PRE-PROCESS cmd="set" data="internal_rtp_ip=127.0.0.1"/>
+    <X-PRE-PROCESS cmd="set" data="external_rtp_ip=127.0.0.1"/>
+    <X-PRE-PROCESS cmd="set" data="internal_sip_ip=127.0.0.1"/>
+    <X-PRE-PROCESS cmd="set" data="external_sip_ip=127.0.0.1"/>
+    <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA"/>
+
+
+</include>

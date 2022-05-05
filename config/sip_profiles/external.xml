@@ -1,0 +1,43 @@
+<profile name="external">
+
+    <gateways>
+        <gateway name="local">
+            <param name="proxy" value="$${external_sip_ip}:5061"/>
+            <param name="register" value="false"/>
+        </gateway>
+    </gateways>
+
+    <settings>
+        <param name="shutdown-on-fail" value="true"/>
+        <param name="disable-register" value="true"/>
+
+        <param name="local-network-acl" value="none"/>
+        <param name="sip-port" value="5061"/>
+        <param name="rtp-ip" value="$${internal_rtp_ip}"/>
+        <param name="sip-ip" value="$${internal_sip_ip}"/>
+        <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
+        <param name="ext-sip-ip" value="$${external_sip_ip}"/>
+
+        <param name="inbound-use-callid-as-uuid" value="true"/>
+
+        <param name="inbound-codec-prefs" value="$${global_codec_prefs}"/>
+        <param name="outbound-codec-prefs" value="$${global_codec_prefs}"/>
+        <param name="inbound-codec-negotiation" value="generous"/>
+        <param name="inbound-late-negotiation" value="true"/>
+        <param name="inbound-zrtp-passthru" value="true"/>
+
+        <param name="enable-timer" value="true"/>
+        <param name="session-timeout" value="1800"/>
+        <param name="rtp-timer-name" value="soft"/>
+        <param name="rtp-timeout-sec" value="180"/>
+        <param name="rtp-hold-timeout-sec" value="180"/>
+        <param name="rtp-autofix-timing" value="false"/>
+
+        <param name="dialplan" value="XML"/>
+        <param name="context" value="external"/>
+        <param name="enable-3pcc" value="proxy"/>
+
+        <param name="NDLB-force-rport" value="true"/>
+
+    </settings>
+</profile>

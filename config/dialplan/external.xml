@@ -1,0 +1,13 @@
+<include>
+	<context name="external">
+
+        <extension name="inbound_call">
+            <condition field="destination_number" expression=".*">
+
+                <action application="lua" data="demo.lua"/>
+
+            </condition>
+        </extension>
+
+	</context>
+</include>

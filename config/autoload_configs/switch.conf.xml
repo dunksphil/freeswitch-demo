@@ -1,0 +1,10 @@
+<configuration name="switch.conf" description="Switch">
+    <settings>
+        <param name="loglevel" value="warn"/>
+        <param name="core-db-name" value="/dev/shm/core.db"/>
+        <param name="max-sessions" value="10000"/>
+        <param name="sessions-per-second" value="100"/>
+        <param name="rtp-start-port" value="64134"/>
+        <param name="rtp-end-port" value="64160"/>
+    </settings>
+</configuration>

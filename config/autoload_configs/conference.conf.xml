@@ -1,0 +1,31 @@
+<configuration name="conference.conf" description="Conference">
+  <caller-controls>
+    <group name="default">
+      <control action="event" digits="0"/>
+      <control action="event" digits="1"/>
+      <control action="event" digits="2"/>
+      <control action="event" digits="3"/>
+      <control action="event" digits="4"/>
+      <control action="event" digits="5"/>
+      <control action="event" digits="6"/>
+      <control action="event" digits="7"/>
+      <control action="event" digits="8"/>
+      <control action="event" digits="9"/>
+      <control action="event" digits="#"/>
+      <control action="event" digits="*"/>
+    </group>
+  </caller-controls>
+
+  <profiles>
+    <profile name="default">
+      <param name="rate" value="8000"/>
+      <param name="channels" value="1"/>
+      <param name="interval" value="20"/>
+      <param name="energy-level" value="300"/>
+      <param name="comfort-noise" value="0"/>
+      <param name="max-members" value="256"/>
+      <param name="verbose-events" value="true"/>
+      <param name="sound-prefix" value="/usr/share/freeswitch/sounds/"/>
+    </profile>
+  </profiles>
+</configuration>
